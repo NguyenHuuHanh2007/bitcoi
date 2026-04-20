@@ -1,5 +1,4 @@
 package com.example.hocjavafx;
 
-public class TrangChu {
-
+public class DangKi {
 }
