@@ -1,36 +1,44 @@
 package com.example.hocjavafx;
-import javafx.scene.Node;
-import javafx.scene.control.TextField;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class GiaoDien {
+public class TrangChuController implements Initializable {
+
     @FXML
-    TextField username;
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    public void checkusername(ActionEvent event){
+    private Label lblUsername;
 
-    }
-    public void checkpassword(ActionEvent event){
+    @FXML
+    private TableView<?> tableAuctions; // Sau này bạn sẽ map với class SanPham/Auction của bạn [cite: 112, 116]
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Code chạy khi màn hình trang chủ vừa load lên
+        // Có thể load dữ liệu từ database vào TableView ở đây [cite: 130]
     }
-    public void login(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/hocjavafx/fxml/trangchu.fxml"));
-        root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+
+    // Sự kiện khi bấm nút Đăng Xuất
+    public void dangXuat(ActionEvent event) throws IOException {
+        // Load lại màn hình Login
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/hocjavafx/fxml/login.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(true);
+        stage.setMaximized(true);
         stage.show();
     }
 }
-//test
