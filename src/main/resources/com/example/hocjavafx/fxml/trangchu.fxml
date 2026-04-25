@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: #f4f7f6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hocjavafx.TrangChuController">
+<BorderPane prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: #f4f7f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hocjavafx.TrangChuController">
 
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="60.0" style="-fx-background-color: #00AEEF; -fx-padding: 0 20px;">
@@ -35,7 +35,7 @@
          <children>
             <Button maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: #e6f7ff; -fx-text-fill: #00AEEF; -fx-font-weight: bold; -fx-cursor: hand;" text="Danh sách đấu giá" />
             <Button maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Phòng đấu giá (Live)" />
-            <Button maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Quản lý sản phẩm" />
+            <Button maxWidth="Infinity" onAction="#quanLySanPham" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Quản lý sản phẩm" />
             <Button maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Lịch sử giao dịch" />
 
             <Region VBox.vgrow="ALWAYS" />

@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
-import javafx.stage.Stage;
+import javafx.scene.layout.Region; // Bổ sung thư viện này
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,24 +21,40 @@ public class TrangChuController implements Initializable {
     private Label lblUsername;
 
     @FXML
-    private TableView<?> tableAuctions; // Sau này bạn sẽ map với class SanPham/Auction của bạn [cite: 112, 116]
+    private TableView<?> tableAuctions;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Code chạy khi màn hình trang chủ vừa load lên
-        // Có thể load dữ liệu từ database vào TableView ở đây [cite: 130]
+        // Có thể load dữ liệu từ database vào TableView ở đây
+    }
+    public void dangXuat(ActionEvent event) throws IOException {
+        // Đăng xuất thì đá người dùng văng ra lại màn hình Login mượt mà
+        chuyenTrang(event, "/com/example/hocjavafx/fxml/login.fxml");
+    }
+    public void quanLySanPham(ActionEvent event) throws IOException{
+        chuyenTrang(event, "/com/example/hocjavafx/fxml/quanlysanpham.fxml");
     }
 
-    // Sự kiện khi bấm nút Đăng Xuất
-    public void dangXuat(ActionEvent event) throws IOException {
-        // Load lại màn hình Login
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/hocjavafx/fxml/login.fxml"));
+    // ==========================================
+    // HÀM XỬ LÝ LÕI
+    // ==========================================
+
+    private void chuyenTrang(ActionEvent event, String duongDanFXML) throws IOException {
+        // 1. Tải giao diện mới
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(duongDanFXML));
         Parent root = loader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setResizable(true);
-        stage.setMaximized(true);
-        stage.show();
+
+        // 2. Lấy Scene hiện tại
+        Scene scene = ((Node) event.getSource()).getScene();
+
+        // 3. Ép kích thước khung mới bằng với kích thước màn hình hiện tại để chống chớp giật
+        if (root instanceof Region) {
+            Region newRegion = (Region) root;
+            newRegion.setPrefSize(scene.getWidth(), scene.getHeight());
+        }
+
+        // 4. Lột xác!
+        scene.setRoot(root);
     }
 }
