@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.Region; // Thư viện để ép kích thước
+import javafx.scene.layout.Region;
 
 import java.io.IOException;
 import java.net.URL;

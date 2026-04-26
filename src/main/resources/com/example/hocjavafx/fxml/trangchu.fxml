@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -26,6 +27,14 @@
                   <Font size="15.0" />
                </font>
             </Label>
+            <Button mnemonicParsing="false" onAction="#quanLyTaiKhoan" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5; -fx-text-fill: white; -fx-cursor: hand;" text="Ví cá nhân">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
    </top>
@@ -34,9 +43,9 @@
       <VBox prefWidth="220.0" spacing="10.0" style="-fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-width: 0 1 0 0; -fx-padding: 20px 10px;">
          <children>
             <Button maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: #e6f7ff; -fx-text-fill: #00AEEF; -fx-font-weight: bold; -fx-cursor: hand;" text="Danh sách đấu giá" />
-            <Button maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Phòng đấu giá (Live)" />
+            <Button maxWidth="Infinity" onAction="#vaoPhongLive" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Phòng đấu giá (Live)" />
             <Button maxWidth="Infinity" onAction="#quanLySanPham" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Quản lý sản phẩm" />
-            <Button maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Lịch sử giao dịch" />
+            <Button maxWidth="Infinity" onAction="#xemLichSu" prefHeight="45.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-text-fill: #333333;" text="Lịch sử giao dịch" />
 
             <Region VBox.vgrow="ALWAYS" />
 
@@ -67,8 +76,9 @@
 
             <HBox alignment="CENTER_RIGHT" spacing="15.0">
                <children>
-                  <Button prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-cursor: hand;" text="Xem chi tiết" />
-                  <Button prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Tham Gia Đấu Giá" />
+                  <Button mnemonicParsing="false" onAction="#xemChiTietSP" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-cursor: hand;" text="Xem chi tiết" />
+
+                  <Button mnemonicParsing="false" onAction="#thamGiaDauGia" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Tham Gia Đấu Giá" />
                </children>
             </HBox>
          </children>

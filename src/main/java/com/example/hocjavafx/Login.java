@@ -40,7 +40,6 @@ public class Login implements Initializable {
     // ==========================================
 
     public void dangNhap(ActionEvent event) throws IOException {
-        // Gọi hàm dùng chung, truyền vào Event và đường dẫn FXML Trang Chủ
         chuyenTrang(event, "/com/example/hocjavafx/fxml/trangchu.fxml");
     }
 
