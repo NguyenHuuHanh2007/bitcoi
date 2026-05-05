@@ -33,7 +33,7 @@
                      <children>
                         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="50.0" text="Tài Khoản" textFill="#fc0707" />
 
-                        <TextField fx:id="username" prefHeight="40.0" promptText="Tên tài khoản, Email hoặc số điện thoại" />
+                        <TextField fx:id="nickname" prefHeight="40.0" promptText="Tên tài khoản, Email hoặc số điện thoại" />
 
                         <PasswordField fx:id="password" prefHeight="40.0" promptText="Mật khẩu" />
 
