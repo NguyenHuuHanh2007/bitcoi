@@ -37,7 +37,7 @@ public class PhongLiveController implements Initializable {
         // Động cơ sinh tin nhắn ảo mỗi 2 giây
         botLive = new Timeline(new KeyFrame(Duration.seconds(2), event -> {
             String[] userAo = {"Hoang_De_99", "ThichMuaSam", "Hacker_Lo", "PhuGiaDubai", "Giau_Nhat_VN"};
-            String[] hanhDong = {"đã thả tim ❤️", "vừa tham gia phòng!", "bảo: Món này mướt quá ae", "đang hóng...", "đã ra giá 1,200,000 VNĐ"};
+            String[] hanhDong = {"đã thả tim ❤️", "vừa tham gia phòng!", "bảo: Anh Minh Anh dz quá", "đang hóng...", "đã ra giá 1,200,000 VNĐ"};
 
             String user = userAo[(int) (Math.random() * userAo.length)];
             String hd = hanhDong[(int) (Math.random() * hanhDong.length)];
