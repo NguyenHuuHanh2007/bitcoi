@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
-import javafx.stage.Stage;
+import javafx.scene.layout.Region;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,13 +25,33 @@ public class DangKi implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Khởi tạo dữ liệu khi mở trang Đăng Ký
     }
+
     public void dangKiNgay(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/hocjavafx/fxml/login.fxml"));
+        // Đăng ký xong thì chuyển ngược về trang Đăng Nhập cực kỳ êm ái
+        chuyenTrang(event, "/com/example/hocjavafx/fxml/login.fxml");
+    }
+
+    // ==========================================
+    // HÀM XỬ LÝ LÕI (COPY TỪ CLASS LOGIN SANG)
+    // ==========================================
+
+    private void chuyenTrang(ActionEvent event, String duongDanFXML) throws IOException {
+        // 1. Tải giao diện mới (trong trường hợp này là login.fxml)
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(duongDanFXML));
         Parent root = loader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        // 2. Lấy Scene hiện tại
+        Scene scene = ((Node) event.getSource()).getScene();
+
+        // 3. Ép kích thước khung mới bằng với kích thước màn hình hiện tại
+        if (root instanceof Region) {
+            Region newRegion = (Region) root;
+            newRegion.setPrefSize(scene.getWidth(), scene.getHeight());
+        }
+
+        // 4. Lột xác!
+        scene.setRoot(root);
     }
 }
