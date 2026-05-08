@@ -78,7 +78,7 @@ public class Login implements Initializable {
     @FXML
     public void dangNhapAdmin(ActionEvent event) {
         try {
-            String usernameInput = nickname.getText();
+            String usernameInput = nicknametr.getText();
             String passwordInput = password.getText();
 
             if (usernameInput == null || usernameInput.isEmpty() ||
